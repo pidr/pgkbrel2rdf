@@ -47,6 +47,7 @@ var options = { //Options for the csv parser
         var pd = row.PD;
         console.log(entity1_id);
         console.log(entity1_type);
+        console.log(entity1_name);
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity1_id,
           predicate: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
@@ -56,7 +57,7 @@ var options = { //Options for the csv parser
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity1_id,
           predicate: 'http://www.w3.org/2000/01/rdf-schema#label',
-          object:    entity1_name
+          object:    '"'+entity1_name+'"'
         });
 
         writer.addTriple({
@@ -74,13 +75,13 @@ var options = { //Options for the csv parser
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity1_id+'_'+entity2_id,
           predicate: 'http://pharmgkb.org/relationships/association_type',
-          object:    association
+          object:    '"'+association+'"'
         });
 
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity2_id,
           predicate: 'http://www.w3.org/2000/01/rdf-schema#label',
-          object:    entity2_name
+          object:    '"'+entity2_name+'"'
         });
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity2_id,
@@ -91,7 +92,7 @@ var options = { //Options for the csv parser
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity2_id,
           predicate: 'http://www.w3.org/2000/01/rdf-schema#label',
-          object:    entity2_name
+          object:    '"'+entity2_name+'"'
         });
 
         writer.addTriple({
