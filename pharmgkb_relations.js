@@ -5,7 +5,7 @@ var EventEmitter = require('events').EventEmitter;
 var csv = require('csv-streamify');
 var N3 = require('n3');
 
-var turtle_dir = "./rdf";
+var turtle_dir = "./rdf/";
 var relationshipsPath = "./relationships.tsv";
 var options = { //Options for the csv parser
   delimiter: '\t',
@@ -78,11 +78,6 @@ var options = { //Options for the csv parser
           object:    '"'+association+'"'
         });
 
-        writer.addTriple({
-          subject:   'http://pharmgkb.org/relationships/'+entity2_id,
-          predicate: 'http://www.w3.org/2000/01/rdf-schema#label',
-          object:    '"'+entity2_name+'"'
-        });
         writer.addTriple({
           subject:   'http://pharmgkb.org/relationships/'+entity2_id,
           predicate: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
