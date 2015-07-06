@@ -31,7 +31,7 @@ var options = { //Options for the csv parser
   fstream.pipe(parser);
 
   var writer = N3.Writer({
-    prefixes: { 'biodb': 'http://pharmgkb.org/relationships/' }
+    prefixes: { 'pharmgkb': 'http://pharmgkb.org/relationships/' }
   });
 
   function getData(row) {
